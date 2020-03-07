@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>learn-maven</artifactId>
+        <groupId>com.carrot.learn</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>maven-demo</artifactId>
+    <packaging>jar</packaging>
+
+    <!--定义maven私服地址；通常会定义在setting.xml文件中，否则每个项目都需要配置下面这段-->
+    <!--<repositories>
+        <repository>
+            <id>nexus-repository</id>
+            <name>nexus repository</name>
+            <url>http://ip:port/nexus/content/groups/public</url>
+        </repository>
+    </repositories>-->
+    <!--上传jar包需要配置用户名密码，在setting.xml中servers标签下配置(ID需要和下面的ID一致)，否则会出现权限问题-->
+<!--    <distributionManagement>
+        <repository>
+            <id>release-repository</id>
+            <name>release-repo</name>
+            <url>http://ip:port/nexus/content/repository/release</url>
+        </repository>
+        <repository>
+            <id>snapshot-repository</id>
+            <name>snapshot-repo</name>
+            <url>http://ip:port/nexus/content/repository/snapshot</url>
+        </repository>
+    </distributionManagement>-->
+
+    <build>
+        <plugins>
+            <!--使用自定义插件,绑定到compile阶段，执行compile的时候会打印出自定义插件打印语句的内容-->
+            <plugin>
+                <groupId>com.carrot.learn</groupId>
+                <artifactId>maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>print plugin info</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>kyg</goal>
+                        </goals>
+                        <configuration>
+                            <sex>man</sex>
+                            <describe>good man</describe>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

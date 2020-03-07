@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fe3c73bc-9056-468c-8ed6-a5f06c63828d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/dev/apache-maven-3.6.0-bin/apache-maven-3.6.0" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YmP4M3Y21eaomlnJS7C7JC54I7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/learn-netty/src/main/java/org/carrot/learn/io" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace-idea\carrot-learn\learn-netty\src\main\java\org\carrot\learn\io" />
+      <recent name="D:\workspace-idea\carrot-learn\learn-netty\src\main\java\org\carrot\learn\netty" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="carrot-learn [compile]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="compile" />
+                <option value="-U" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe3c73bc-9056-468c-8ed6-a5f06c63828d" name="Default Changelist" comment="" />
+      <created>1583544603308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583544603308</updated>
+      <workItem from="1583544606893" duration="12181000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="557" y="143" key="#carrot-learn_[compile]" timestamp="1583573641662">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="557" y="143" key="#carrot-learn_[compile]/0.0.1920.1050@0.0.1920.1050" timestamp="1583573641662" />
+    <state x="557" y="143" key="#carrot-learn_[compile]_(1)" timestamp="1583573658200">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="557" y="143" key="#carrot-learn_[compile]_(1)/0.0.1920.1050@0.0.1920.1050" timestamp="1583573658200" />
+    <state x="765" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1583571854361">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="765" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1583571854361" />
+    <state x="740" y="283" key="FileChooserDialogImpl" timestamp="1583547451745">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="283" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1583547451745" />
+    <state width="1877" height="526" key="GridCell.Tab.0.bottom" timestamp="1583574761386">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="526" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1583574761386" />
+    <state width="1877" height="526" key="GridCell.Tab.0.center" timestamp="1583574761386">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="526" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1583574761386" />
+    <state width="1877" height="526" key="GridCell.Tab.0.left" timestamp="1583574761386">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="526" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1583574761386" />
+    <state width="1877" height="526" key="GridCell.Tab.0.right" timestamp="1583574761386">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="526" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1583574761386" />
+    <state x="463" y="170" key="SettingsEditor" timestamp="1583547461849">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="463" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1583547461849" />
+    <state x="334" y="229" key="new project wizard" timestamp="1583572677027">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="334" y="229" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1583572677027" />
+    <state x="1179" y="365" width="672" height="678" key="search.everywhere.popup" timestamp="1583575664733">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1179" y="365" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1583575664733" />
+  </component>
+</project>
