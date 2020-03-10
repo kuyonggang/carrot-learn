@@ -1,0 +1,2 @@
+如果创建自定义maven插件，在创建项目的时候可以选择
+MAVEN -> Create from archetype -> maven-archetype-mojo

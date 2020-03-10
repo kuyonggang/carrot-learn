@@ -12,7 +12,8 @@
   <modules>
     <module>learn-netty</module>
     <module>learn-maven</module>
-      <module>learn-mongo</module>
+    <module>learn-mongo</module>
+    <module>learn-redis</module>
   </modules>
 
   <name>carrot-learn</name>

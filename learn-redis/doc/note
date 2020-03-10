@@ -1,0 +1,72 @@
+1、分布式锁实现方式：
+setnx key value 多个进程对同一个key设置键值value,结果为1的进程获得锁，同时设置过期时间，操作结束删除key
+incr key 多个进程对同一个初始值为0的key进行原子递增，结果为1的进程获得锁，操作结束删除key
+
+2、服务限流：
+可以用令牌桶算法进行限流
+可以用redis的incr操作来限制每个IP每秒内累加的值达到服务限流的目的
+
+实例: 限速器 1
+更加简单和直接的实现如下：
+FUNCTION LIMIT_API_CALL(ip)
+ts = CURRENT_UNIX_TIME()
+keyname = ip+":"+ts
+current = GET(keyname)
+IF current != NULL AND current > 10 THEN
+    ERROR "too many requests per second"
+ELSE
+    MULTI
+        INCR(keyname,1)
+        EXPIRE(keyname,10)
+    EXEC
+    PERFORM_API_CALL()
+END
+这种方法的基本点是每个ip每秒生成一个可以记录请求数的计数器。
+但是这些计数器每次递增的时候都设置了10秒的过期时间，这样在进入下一秒之后，redis会自动删除前一秒的计数器。
+注意上面伪代码中我们用到了MULTI和EXEC命令，将递增操作和设置过期时间的操作放在了一个事务中，从而保证了两个操作的原子性。
+
+实例: 限速器 2
+另外一个实现是对每个ip只用一个单独的计数器（不是每秒生成一个），但是需要注意避免竟态条件。我们会对多种不同的变量进行测试。
+FUNCTION LIMIT_API_CALL(ip):
+current = GET(ip)
+IF current != NULL AND current > 10 THEN
+    ERROR "too many requests per second"
+ELSE
+    value = INCR(ip)
+    IF value == 1 THEN
+        EXPIRE(value,1)
+    END
+    PERFORM_API_CALL()
+END
+上述方法的思路是，从第一个请求开始设置过期时间为1秒。如果1秒内请求数超过了10个，那么会抛异常。
+否则，计数器会清零。
+上述代码中，可能会进入竞态条件，比如客户端在执行INCR之后，没有成功设置EXPIRE时间。这个ip的key会造成内存泄漏，直到下次有同一个ip发送相同的请求过来。
+把上述INCR和EXPIRE命令写在lua脚本并执行EVAL命令可以避免上述问题（只有redis版本>＝2.6才可以使用）
+local current
+current = redis.call("incr",KEYS[1])
+if tonumber(current) == 1 then
+    redis.call("expire",KEYS[1],1)
+end
+还可以通过使用redis的list来解决上述问题避免进入竞态条件。
+
+实现代码更加复杂并且利用了一些redis的新的feature，可以记录当前请求的客户端ip地址。这个有没有好处取决于应用程序本身。
+FUNCTION LIMIT_API_CALL(ip)
+current = LLEN(ip)
+IF current > 10 THEN
+    ERROR "too many requests per second"
+ELSE
+    IF EXISTS(ip) == FALSE
+        MULTI
+            RPUSH(ip,ip)
+            EXPIRE(ip,1)
+        EXEC
+    ELSE
+        RPUSHX(ip,ip)
+    END
+    PERFORM_API_CALL()
+END
+The RPUSHX command only pushes the element if the key already exists.
+RPUSHX命令会往list中插入一个元素，如果key存在的话
+上述实现也可能会出现竞态，比如我们在执行EXISTS指令之后返回了false，但是另外一个客户端创建了这个key。
+后果就是我们会少记录一个请求。但是这种情况很少出现，所以我们的请求限速器还是能够运行良好的。
+3、mget("key1","key2","key3"):一次获取多个key的值，可以减少网络IO，提高性能。
