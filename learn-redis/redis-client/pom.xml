@@ -23,10 +23,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.j</groupId>
-      <artifactId>jedis</artifactId>
-    </dependency>
-    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
